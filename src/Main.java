@@ -7,21 +7,26 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Scanner GetAmount = new Scanner(System.in);
-        System.out.print("Enter your amount of numbers:");
+        System.out.print("Enter the number of integers: ");
         int n = GetAmount.nextInt();
-        int[] num = new int[n];
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 0; i < n; i++){
+        int[] numbers = new int[n];
+
+        for (int i = 0; i < n; i++) {
             System.out.print("Enter your numbers:");
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            num[i] = GetAmount.nextInt();
+            numbers[i] = GetAmount.nextInt();
         }
+
         GetAmount.close();
-        Arrays.sort(num);
+        sortAndPrintNumbers(numbers);
+    }
+
+    // Method
+    public static void sortAndPrintNumbers(int[] numbers) {
+        Arrays.sort(numbers);
+
         System.out.println("Sorted numbers:");
-        for(int i = 0; i < n; i++){
-            System.out.println(num[i]);
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
         }
     }
 }
