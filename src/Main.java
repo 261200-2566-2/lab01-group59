@@ -1,17 +1,32 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+
+import java.util.Scanner;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Scanner GetAmount = new Scanner(System.in);
+        System.out.print("Enter the number of integers: ");
+        int n = GetAmount.nextInt();
+        int[] numbers = new int[n];
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter your numbers:");
+            numbers[i] = GetAmount.nextInt();
+        }
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        GetAmount.close();
+        sortAndPrintNumbers(numbers);
+    }
+
+    // Method
+    public static void sortAndPrintNumbers(int[] numbers) {
+        Arrays.sort(numbers);
+
+        System.out.println("Sorted numbers:");
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
         }
     }
 }
